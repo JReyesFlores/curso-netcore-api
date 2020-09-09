@@ -1,0 +1,15 @@
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Data.deps.json
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Data.dll
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.AssemblyInfoInputs.cache
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.AssemblyInfo.cs
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.csprojAssemblyReference.cache
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Data.runtimeconfig.json
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Data.runtimeconfig.dev.json
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Data.pdb
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.dll
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.pdb
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.genruntimeconfig.cache
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Models.dll
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\bin\Debug\netcoreapp3.1\JMusik.Models.pdb
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.csproj.CopyComplete
+D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Data\obj\Debug\netcoreapp3.1\JMusik.Data.csproj.CoreCompileInputs.cache

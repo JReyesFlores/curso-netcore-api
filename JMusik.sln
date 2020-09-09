@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMusik.Models", "JMusik.Models\JMusik.Models.csproj", "{D4F1BDAA-B2FF-4B53-8E22-6B5FC2F03E9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMusik.Data", "JMusik.Data\JMusik.Data.csproj", "{FE5549A0-F259-4892-9C49-B78F6F6C83C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMusik.Dtos", "JMusik.Dtos\JMusik.Dtos.csproj", "{74E2EE5C-9D6B-4CB6-9AB6-80032636D54E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JMusik.WebAPI", "JMusik.WebAPI\JMusik.WebAPI.csproj", "{F927ED38-104B-4F28-993C-7CDE6043C7DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4F1BDAA-B2FF-4B53-8E22-6B5FC2F03E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F1BDAA-B2FF-4B53-8E22-6B5FC2F03E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F1BDAA-B2FF-4B53-8E22-6B5FC2F03E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F1BDAA-B2FF-4B53-8E22-6B5FC2F03E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE5549A0-F259-4892-9C49-B78F6F6C83C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE5549A0-F259-4892-9C49-B78F6F6C83C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE5549A0-F259-4892-9C49-B78F6F6C83C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE5549A0-F259-4892-9C49-B78F6F6C83C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74E2EE5C-9D6B-4CB6-9AB6-80032636D54E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E2EE5C-9D6B-4CB6-9AB6-80032636D54E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E2EE5C-9D6B-4CB6-9AB6-80032636D54E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E2EE5C-9D6B-4CB6-9AB6-80032636D54E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F927ED38-104B-4F28-993C-7CDE6043C7DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F927ED38-104B-4F28-993C-7CDE6043C7DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F927ED38-104B-4F28-993C-7CDE6043C7DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F927ED38-104B-4F28-993C-7CDE6043C7DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9882F8A0-AB40-4FF6-8DC6-6CFFF29E555F}
+	EndGlobalSection
+EndGlobal
