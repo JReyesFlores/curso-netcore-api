@@ -1,9 +1,0 @@
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\bin\Debug\netcoreapp3.1\JMusik.Models.deps.json
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\bin\Debug\netcoreapp3.1\JMusik.Models.dll
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\bin\Debug\netcoreapp3.1\JMusik.Models.pdb
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\obj\Debug\netcoreapp3.1\JMusik.Models.csprojAssemblyReference.cache
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\obj\Debug\netcoreapp3.1\JMusik.Models.AssemblyInfoInputs.cache
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\obj\Debug\netcoreapp3.1\JMusik.Models.AssemblyInfo.cs
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\obj\Debug\netcoreapp3.1\JMusik.Models.csproj.CoreCompileInputs.cache
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\obj\Debug\netcoreapp3.1\JMusik.Models.dll
-D:\Proyectos\Practicas\Servicios\JMusik\JMusik.Models\obj\Debug\netcoreapp3.1\JMusik.Models.pdb
