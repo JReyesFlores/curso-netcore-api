@@ -11,9 +11,11 @@ using JMusik.Data.Contratos;
 using AutoMapper;
 using JMusik.Dtos;
 using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Authorization;
 
 namespace JMusik.WebAPI.Controllers
 {
+    [Authorize(Roles = "Administrador,Vendedor")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductosController : ControllerBase

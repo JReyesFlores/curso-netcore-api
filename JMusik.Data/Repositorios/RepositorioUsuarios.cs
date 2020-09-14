@@ -141,5 +141,21 @@ namespace JMusik.Data.Repositorios
             }
             return false;
         }
+
+        public async Task<(bool resultado, Usuario usuario)> ValidarDatosLogin(Usuario datosLoginUsuario)
+        {
+            var usuarioBd = await _dbSet.Include(u => u.Perfil)
+                                        .FirstOrDefaultAsync(u => u.Username == datosLoginUsuario.Username);
+            try
+            {
+                var resultado = _passwordHasher.VerifyHashedPassword(usuarioBd, usuarioBd.Password, datosLoginUsuario.Password);
+                return (resultado == PasswordVerificationResult.Success ? true : false, usuarioBd);
+            }
+            catch (Exception excepcion)
+            {
+                _logger.LogError($"Error en {nameof(ValidarDatosLogin)}: {excepcion.Message}");
+            }
+            return (false, null);
+        }
     }
 }

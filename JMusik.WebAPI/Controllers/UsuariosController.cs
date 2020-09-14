@@ -6,11 +6,13 @@ using AutoMapper;
 using JMusik.Data.Contratos;
 using JMusik.Dtos;
 using JMusik.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace JMusik.WebApi.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuariosController : ControllerBase
@@ -87,7 +89,7 @@ namespace JMusik.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<UsuarioListaDto>> Put(int id, [FromBody]UsuarioActualizacionDto usuarioDto)
+        public async Task<ActionResult<UsuarioListaDto>> Put(int id, [FromBody] UsuarioActualizacionDto usuarioDto)
         {
             if (usuarioDto == null)
                 return NotFound();
@@ -136,7 +138,7 @@ namespace JMusik.WebApi.Controllers
                 {
                     return BadRequest();
                 }
-                return NoContent();                
+                return NoContent();
 
             }
             catch (Exception)

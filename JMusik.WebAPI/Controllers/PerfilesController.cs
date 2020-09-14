@@ -6,12 +6,14 @@ using AutoMapper;
 using JMusik.Data.Contratos;
 using JMusik.Dtos;
 using JMusik.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace JMusik.WebApi.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     [Route("api/[controller]")]
     [ApiController]
     public class PerfilesController : ControllerBase
