@@ -9,6 +9,7 @@ using JMusik.Data.Contratos;
 using JMusik.Data.Repositorios;
 using JMusik.Models;
 using JMusik.WebApi.Services;
+using JMusik.WebAPI.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -38,57 +39,22 @@ namespace JMusik.WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddAutoMapper(typeof(Startup));
+            //AddXmlDataContractSerializerFormatters => Nos permite aceptar y enviar datos XML
+            //ReturnHttpNotAcceptable => Retorna un código de estado 406 [Formato no aceptado]
+            services.AddControllers(config =>
+            {
+                config.ReturnHttpNotAcceptable = true;
+            }).AddXmlDataContractSerializerFormatters();
+
             services.AddDbContext<TiendaDbContext>(options =>
             {
                 options.UseSqlServer(this._configuration.GetConnectionString("TiendaDb"));
             });
-            services.AddControllers();
-            //Mapeo de las interfaces del repository
-            services.AddScoped<IRepositorioGenerico<Perfil>, RepositorioPerfiles>();
-            services.AddScoped<IProductosRepositorio, ProductosRepositorio>();
-            services.AddScoped<IOrdenesRepositorio, RepositorioOrdenes>();
-            services.AddScoped<IUsuariosRepositorio, RepositorioUsuarios>(); 
-            services.AddScoped<IPasswordHasher<Usuario>, PasswordHasher<Usuario>>(); //Crea la encriptación de los campos
+            
 
-            //Solo existira una instancia de la clase TokenService
-            services.AddSingleton<TokenService>();
-
-            //Configurando el uso del standar JWT
-            //Accedemos a la sección JWTSettings del archivo appsettings.json
-            var jwtSettings = this._configuration.GetSection("JwtSettings");
-            //Obtenemos la clave secreta
-            string secretKey = jwtSettings.GetValue<string>("SecretKey");
-            //Obtenemos el tiempo de vida en minutos del JWT
-            int minutes = jwtSettings.GetValue<int>("MinutesToExpiration");
-            //Obtenemos el valor del emiso del token en JwtSettings:Issuer
-            string issuer = jwtSettings.GetValue<string>("Issuer");
-            //Obtenemos el valor de la audiencia a la que esta destinado el Jwt en JwtSetting
-            string audience = jwtSettings.GetValue<string>("Audience");
-
-            var key = Encoding.ASCII.GetBytes(secretKey);
-            services.AddAuthentication(x =>
-            {
-                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(x => {
-                x.RequireHttpsMetadata = false;
-                x.SaveToken = true;
-                x.TokenValidationParameters = new TokenValidationParameters {
-                    ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
-                    ValidateIssuer = true,
-                    ValidIssuer = issuer,
-                    ValidAudience = audience,
-                    ValidateLifetime = true,
-                    ClockSkew = TimeSpan.FromMinutes(minutes)
-                };
-            });
-
-            //Creamos las politicas e acceso
-            services.AddCors(options => {
-                options.AddPolicy("CorsPolicy",
-                    builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-            });
+            services.ConfigureDependencies();
+            services.ConfigureJWT(this._configuration);
+            services.ConfigureCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
