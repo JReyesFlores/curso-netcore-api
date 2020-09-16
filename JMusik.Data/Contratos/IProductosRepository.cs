@@ -13,6 +13,7 @@ namespace JMusik.Data.Contratos
         Task<Producto> Agregar(Producto producto);
         Task<bool> Actualizar(Producto producto);
         Task<bool> Eliminar(int id);
+        Task<(int totalRegistros, IEnumerable<Producto> registros)> ObtenerPaginasProductos(int paginaActual, int registrosPorPagina);
     }
 
 }

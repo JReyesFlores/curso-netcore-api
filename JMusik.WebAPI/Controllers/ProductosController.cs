@@ -12,10 +12,11 @@ using AutoMapper;
 using JMusik.Dtos;
 using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Authorization;
+using JMusik.WebAPI.Helpers;
 
 namespace JMusik.WebAPI.Controllers
 {
-    [Authorize(Roles = "Administrador,Vendedor")]
+    //[Authorize(Roles = "Administrador,Vendedor")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProductosController : ControllerBase
@@ -34,16 +35,37 @@ namespace JMusik.WebAPI.Controllers
             this._logger = logger;
         }
 
+        ////// GET: api/Productos
+        //[HttpGet]
+        //[ProducesResponseType(StatusCodes.Status200OK)]
+        //[ProducesResponseType(StatusCodes.Status400BadRequest)]
+        //public async Task<ActionResult<IEnumerable<ProductoDto>>> Get()
+        //{
+        //    try
+        //    {
+        //        var productos = await this._productosRepositorio.ObtenerProductosAsync();
+        //        return this._mapper.Map<List<ProductoDto>>(productos);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this._logger.LogError($"Error al obtener los productos: {ex.Message}");
+        //        return BadRequest();
+        //    }
+        //}
+
         //// GET: api/Productos
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public async Task<ActionResult<IEnumerable<ProductoDto>>> Get()
+        public async Task<ActionResult<Paginador<ProductoDto>>> Get(int paginaActual = 1, int registrosPorPagina = 3)
         {
             try
             {
-                var productos = await this._productosRepositorio.ObtenerProductosAsync();
-                return this._mapper.Map<List<ProductoDto>>(productos);
+                //var productos = await this._productosRepositorio.ObtenerProductosAsync();
+                //return this._mapper.Map<List<ProductoDto>>(productos);
+                var resultado = await this._productosRepositorio.ObtenerPaginasProductos(paginaActual, registrosPorPagina);
+                var listaProductosDto = this._mapper.Map<List<ProductoDto>>(resultado.registros);
+                return new Paginador<ProductoDto>(listaProductosDto, resultado.totalRegistros, paginaActual, registrosPorPagina);
             }
             catch (Exception ex)
             {
